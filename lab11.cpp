@@ -42,4 +42,3 @@ void getCountry(Country* cptr, int num){
         getline(cin, *(cptr->favSights+i));
     }
     }
-
