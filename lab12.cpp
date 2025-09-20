@@ -13,7 +13,7 @@ const int SIZE = 30;
 int main () {
     array<int, SIZE> weather{};
     ifstream fin;
-    fin.open("weather_data.txt");
+    fin.open("C:\\Users\\rayap\\Documents\\Visual Studio 2022\\COMSC-210\\weather_data.txt");
     if (fin.good()){
         for (int i = 0; i < SIZE; i++){
             fin >> weather[i];
@@ -55,6 +55,21 @@ int main () {
         cout << "13.Min: " << *min_element(weather.begin(), weather.end()) << endl;
         cout << "14. Sum: " << accumulate(weather.begin(), weather.end(), 0) << endl;
 
+        array <int, SIZE> temp = weather;
+        fill(temp.begin(), temp.end(), 0);
+        cout << "Weather filled with 0: ";
+        for (int val : weather) cout << val << " ";
+        cout << endl;
+
+        weather.swap(temp);
+        cout << "17. Swapped: ";
+        for (int val : weather) cout << val << " ";
+        cout << endl;
+
 
     }
+    else {
+        cout << "File not found";
+    }
+    return 0;
 }
