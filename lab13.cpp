@@ -5,14 +5,15 @@
 #include <fstream>
 #include <algorithm>
 #include <numeric>
-#include <array>
+#include <vector>
 using namespace std;
 
 const int SIZE = 30;
 
 int main () {
-    array<int, SIZE> weather{};
+    vector<int> weather;
     ifstream fin;
+
     fin.open("C:\\Users\\rayap\\Documents\\Visual Studio 2022\\COMSC-210\\weather_data.txt");
     if (fin.good()){
         for (int i = 0; i < SIZE; i++){
@@ -41,7 +42,7 @@ int main () {
         cout << endl;
 
         int target = 59;
-        array<int, SIZE>::iterator it;
+        vector<int>::iterator it;
         it = find(weather.begin(), weather.end(), target);
         cout << "11. Value " << target;
         if (it != weather.end()){
@@ -55,7 +56,7 @@ int main () {
         cout << "13.Min: " << *min_element(weather.begin(), weather.end()) << endl;
         cout << "14. Sum: " << accumulate(weather.begin(), weather.end(), 0) << endl;
 
-        array <int, SIZE> temp = weather;
+        vector<int> temp(5);
         fill(temp.begin(), temp.end(), 0);
         cout << "Weather filled with 0: ";
         for (int val : weather) cout << val << " ";
