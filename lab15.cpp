@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <array>
 #include <fstream>
+#include <string>
 using namespace std;
 const int SIZE = 4;
 
@@ -24,8 +25,8 @@ const int SIZE = 4;
 
     void print(){
         cout << "Movie: " << title << endl;
-        cout << "Year released: " << year << endl;
-        cout << "Screenwriter: " << writer << endl;
+        cout << setw(10) << "Year released: " << year << endl;
+        cout << setw(10) << "Screenwriter: " << writer << endl;
     }
  };
 
