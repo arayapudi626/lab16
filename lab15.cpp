@@ -24,9 +24,10 @@ const int SIZE = 4;
     void setTitle(string t) {title = t;}
 
     void print(){
-        cout << "Movie: " << title << endl;
-        cout << setw(10) << "Year released: " << year << endl;
-        cout << setw(10) << "Screenwriter: " << writer << endl;
+        cout << "Movie: " << title << '\n';
+        cout << setw(15) << "Year released: " << year << '\n';
+        cout << setw(15) << "Screenwriter: " << writer << endl;
+        cout << '\n';
     }
  };
 
